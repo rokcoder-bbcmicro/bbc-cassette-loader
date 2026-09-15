@@ -1,0 +1,5 @@
+bbc-cassette-loader
+
+Copyright © 2026 Cliff Davies
+
+Licensed under the GNU General Public License, version 3 only (GPL-3.0-only).

@@ -1,0 +1,27 @@
+bbc-cassette-loader — third-party component notices
+
+The runtime package includes the following third-party components. Their
+license texts and copyright notices are supplied by the pinned NuGet packages
+in the repository's packages directory.
+
+NAudio 2.0.1 and related NAudio 2.0.0/2.0.1 packages
+Copyright 2020 Mark Heath
+MIT License. The complete notice is in packages/NAudio.2.0.1/license.txt.
+
+Newtonsoft.Json 13.0.1
+Copyright (c) 2007 James Newton-King
+MIT License. The complete notice is in packages/Newtonsoft.Json.13.0.1/LICENSE.md.
+
+Microsoft.Win32.Registry 4.7.0, System.Buffers 4.5.1,
+System.Collections.Immutable 6.0.0, System.Drawing.Common 5.0.1,
+System.Memory 4.5.4, System.Numerics.Vectors 4.5.0,
+System.Runtime.CompilerServices.Unsafe 6.0.0,
+System.Security.AccessControl 4.7.0, System.Security.Principal.Windows 4.7.0,
+and System.Threading.Tasks.Extensions 4.5.2
+These Microsoft components are distributed under the MIT license. Their full
+license and third-party notices are included in the corresponding package
+directories under packages/.
+
+Zlib.Portable.Signed 1.11.0
+The package's license and attribution information are retained in its NuGet
+package metadata under packages/Zlib.Portable.Signed.1.11.0/.

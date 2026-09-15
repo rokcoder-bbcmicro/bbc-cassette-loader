@@ -1,0 +1,6 @@
+* text=auto eol=lf
+
+*.csw binary
+*.ico binary
+*.raw binary
+*.wav binary

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BBC Micro Cassette Loader help</title>
+  <style>
+    body { max-width: 56rem; margin: 2rem auto; padding: 0 1rem; font: 16px/1.5 Segoe UI, sans-serif; color: #1c2430; }
+    h1, h2 { color: #123b70; } code { background: #f1f3f5; padding: .1rem .25rem; }
+    li { margin: .35rem 0; }
+  </style>
+</head>
+<body>
+  <h1>BBC Micro Cassette Loader</h1>
+  <p>Recover standard BBC Micro cassette files from WAV recordings or live line-in audio.</p>
+
+  <h2>Importing a cassette</h2>
+  <ol>
+    <li>Choose <strong>Input &gt; Import WAV...</strong> and select one or more recordings.</li>
+    <li>For difficult recordings, enable <strong>Use recovery passes</strong>. This takes longer and combines CRC-valid results from eight decoding profiles, including an alternate phase alignment for phase-shifted tones.</li>
+    <li><strong>Attempt conservative CRC repair</strong> is optional. It tries only unique low-confidence bit changes accepted by the cassette CRC.</li>
+    <li>Use <strong>Input &gt; Listen to line-in</strong> to start or stop live capture. Select the capture device and audio channel first.</li>
+    <li>Use <strong>Input &gt; Record line-in to WAV...</strong> to save the same 48 kHz mono capture while live decoding continues. Stop line-in when finished; the completed WAV can be imported normally or with recovery passes. If capture stops unexpectedly, the app finalizes the recording and reports any disk error in the status bar.</li>
+  </ol>
+  <p>Recovered files remain in the session until you choose <strong>File &gt; New cassette...</strong>. That command asks for confirmation and can save and back up the current recovery state. If you import another WAV batch while data is present, the app asks whether to add it to the current cassette, start a new cassette, or cancel, so unrelated tapes do not merge silently.</p>
+  <p>If you later need an earlier session, <strong>File &gt; Restore recovery backup...</strong> lists timestamped reset backups. Restoring replaces the current session after the usual save/discard/cancel choice and makes a safety backup of the current saved files. Diagnostic waveforms are session-only and are not included.</p>
+
+  <h2>Understanding results</h2>
+  <p>Complete files have all expected final blocks and can be exported. Partial files may still be useful, but raw-file and disk-image export accepts complete recovered files only. Select a file and inspect its block map and diagnostic waveform when a block has an error.</p>
+
+  <h2>Support development</h2>
+  <p>If you find this software or another RokCoder project useful, you can <a href="https://ko-fi.com/rokcoder">buy a coffee for RokCoder</a>. Support is entirely optional and does not unlock features or change the software licence.</p>
+
+  <h2>Export</h2>
+  <ul>
+    <li><strong>Recovered files and .inf...</strong> writes payload-only BBC files and matching metadata.</li>
+    <li><strong>CSW cassette image...</strong> writes a cassette image for compatible tools and emulators.</li>
+    <li><strong>BBC Micro disk image...</strong> offers DFS SSD/DSD and classic ADFS S/M/L images. The preflight lets you rename or omit entries when names or capacity need adjustment.</li>
+  </ul>
+
+  <h2>Checking for updates</h2>
+  <p><strong>Help &gt; Check for updates</strong> manually checks GitHub for the latest stable release. It never downloads or installs anything; if a newer version is found, you can choose whether to open its release page. Checks have a short timeout and can be unavailable when offline or when GitHub rate-limits requests.</p>
+  <p>The request is sent only when you choose this command and contains no cassette data, recovery state, file paths, or machine identifier. GitHub may still see the request's IP address, time, and application user-agent.</p>
+
+  <h2>Troubleshooting</h2>
+  <ul>
+    <li>Try a different <strong>Audio channel</strong> for stereo recordings.</li>
+    <li>For line-in, confirm that Windows exposes the intended input device and that its level is not muted or excessively clipped.</li>
+    <li>Keep the executable, required DLLs, configuration file, help file, and licence files together in the distribution folder.</li>
+    <li>The decoder currently targets standard 1200-baud BBC cassette files. 300-baud and custom commercial loaders are not currently supported.</li>
+  </ul>
+</body>
+</html>
